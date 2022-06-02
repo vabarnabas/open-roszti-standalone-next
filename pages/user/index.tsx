@@ -14,9 +14,13 @@ const UserView = () => {
   useEffect(() => {
     const fetchIfCode = async () => {
       if (router.isReady && userCode) {
-        setROszTIData(
-          await getData(Array.isArray(userCode) ? userCode[0] : userCode)
-        )
+        try {
+          setROszTIData(
+            await getData(Array.isArray(userCode) ? userCode[0] : userCode)
+          )
+        } catch {
+          router.push("/")
+        }
       }
     }
 
