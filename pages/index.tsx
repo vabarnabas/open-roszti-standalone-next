@@ -22,14 +22,14 @@ const Home: NextPage = () => {
   return (
     <div className="">
       <Head>
-        <title>{`openRÖszTIv7`}</title>
+        <title>{`openRÖszTI`}</title>
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex h-screen w-screen select-none items-center justify-center text-gray-500">
+      <div className="flex h-screen w-screen select-none items-center justify-center">
         <form
           onSubmit={(e) => onFormSubmit(e)}
           action=""
