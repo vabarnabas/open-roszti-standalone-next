@@ -1,4 +1,3 @@
-import Head from "next/head"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
@@ -31,14 +30,6 @@ const UserView = () => {
   return (
     <Layout>
       <div className="flex h-full w-full select-none">
-        <Head>
-          <title>{`openRÖszTI`}</title>
-          <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-          />
-          <link rel="icon" href="/favicon.ico" />
-        </Head>
         {ROszTIData.length === 0 ? (
           <Spinner />
         ) : (

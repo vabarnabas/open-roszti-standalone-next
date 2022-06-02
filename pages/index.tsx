@@ -2,6 +2,7 @@ import type { NextPage } from "next"
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { SyntheticEvent, useState } from "react"
+import Layout from "../components/layout"
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -20,16 +21,8 @@ const Home: NextPage = () => {
   }
 
   return (
-    <div className="">
-      <Head>
-        <title>{`openRÖszTI`}</title>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className="flex h-screen w-screen select-none items-center justify-center">
+    <Layout>
+      <div className="flex h-full w-full select-none items-center justify-center">
         <form
           onSubmit={(e) => onFormSubmit(e)}
           action=""
@@ -52,7 +45,7 @@ const Home: NextPage = () => {
           </button>
         </form>
       </div>
-    </div>
+    </Layout>
   )
 }
 

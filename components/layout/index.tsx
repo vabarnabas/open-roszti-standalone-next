@@ -1,3 +1,4 @@
+import Head from "next/head"
 import React from "react"
 
 interface Props {
@@ -7,6 +8,14 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
   return (
     <div className="flex h-screen w-screen select-none flex-col text-slate-500">
+      <Head>
+        <title>openRÖszTI</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {/* <div className="inline w-full items-center justify-center bg-soft-green py-2 text-center text-sm text-white">
         You can now add your openRÖszTI as a bookmark.
         <button
