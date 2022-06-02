@@ -23,7 +23,7 @@ const UserView = () => {
   }, [router.isReady, router.query, userCode])
 
   return (
-    <div className="flex h-screen w-screen text-gray-500">
+    <div className="flex h-screen w-screen select-none text-gray-500">
       {ROszTIData.length === 0 ? (
         <Spinner />
       ) : (
