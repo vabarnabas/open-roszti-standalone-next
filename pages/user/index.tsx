@@ -45,6 +45,7 @@ const UserView = () => {
                     </span>
                     more points to be active.
                     <span className="cursor-pointer text-soft-green">
+                      {" "}
                       Go check upcoming events.
                     </span>
                   </p>
