@@ -2,7 +2,7 @@ import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import Spinner from "../../components/spinner/spinner"
-import { getData } from "../../services/retriveData"
+import { getData } from "../../services/getData"
 import { ROszTIDataType } from "../../types/data.types"
 
 const UserView = () => {
