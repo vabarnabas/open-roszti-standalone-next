@@ -6,40 +6,39 @@ import Spinner from "../components/spinner/spinner"
 import { loginWithEmailAndPassword } from "../services/login"
 import { onInputChange } from "../services/onInputChange"
 
-interface InitialFormValues {
-  userCode: string
-  email: string
-  password: string
-}
-
 const Home: NextPage = () => {
   const router = useRouter()
-  const [formValues, setFormValues] = useState({} as InitialFormValues)
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+  const [userCode, setUserCode] = useState("")
   const [fetching, setFetching] = useState(false)
+  const [error, setError] = useState("")
 
   const onFormSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
     setFetching(true)
-    if (formValues.email.length > 0 && formValues.password.length > 0) {
-      const user = await loginWithEmailAndPassword(
-        formValues.email,
-        formValues.password
-      )
-      if (user?.data) {
+    try {
+      if (email.length > 0 && password.length > 0) {
+        const user = await loginWithEmailAndPassword(email, password)
+        if (user?.data) {
+          router.push({
+            pathname: "/user",
+            query: {
+              c: user.data.code,
+            },
+          })
+        }
+      } else if (userCode.length === 6) {
         router.push({
           pathname: "/user",
           query: {
-            c: user.data.code,
+            c: userCode,
           },
         })
       }
-    } else if (formValues.userCode.length === 6) {
-      router.push({
-        pathname: "/user",
-        query: {
-          c: formValues.userCode,
-        },
-      })
+    } catch (err) {
+      setError("Something went wrong.")
+      setFetching(false)
     }
   }
 
@@ -62,34 +61,36 @@ const Home: NextPage = () => {
                 Experimental
               </p>
               <input
-                value={formValues.email}
-                name="email"
+                value={email}
                 onChange={(e) => {
-                  onInputChange(e, formValues, setFormValues)
+                  setEmail(e.target.value)
                 }}
                 type="email"
                 className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
                 placeholder="rID E-mail"
               />
-              <input
-                value={formValues.password}
-                name="password"
-                onChange={(e) => {
-                  onInputChange(e, formValues, setFormValues)
-                }}
-                type="password"
-                className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
-                placeholder="rID Password"
-              />
+              <div className="">
+                <input
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value)
+                  }}
+                  type="password"
+                  className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
+                  placeholder="rID Password"
+                />
+                {error && (
+                  <p className="mt-1 pl-1 text-xs text-rose-500">{error}</p>
+                )}
+              </div>
             </div>
             <div className="relative flex h-px w-full items-center justify-center bg-slate-200 px-32">
               <p className="absolute bg-white px-3 text-sm">or</p>
             </div>
             <input
-              value={formValues.userCode}
-              name="userCode"
+              value={userCode}
               onChange={(e) => {
-                onInputChange(e, formValues, setFormValues)
+                setUserCode(e.target.value)
               }}
               type="text"
               className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"

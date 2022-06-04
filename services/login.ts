@@ -25,6 +25,10 @@ export const loginWithEmailAndPassword = async (
     )
     if (dataRequest.ok) {
       return await dataRequest.json()
+    } else {
+      throw new Error("Internal server error.")
     }
+  } else {
+    throw new Error("Invalid credentials.")
   }
 }
