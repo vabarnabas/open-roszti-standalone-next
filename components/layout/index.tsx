@@ -31,7 +31,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         </button>
       </div> */}
       <div className="flex h-full w-full flex-1">{children}</div>
-      <div className="inline w-full items-center justify-center py-2 text-center text-sm">
+      <div className="mt-4 inline w-full items-center justify-center py-2 text-center text-sm">
         In case of any problem write an email to
         <span className="ml-1 text-soft-green">barnabas.varga@estiem.org</span>.
       </div>
