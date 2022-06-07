@@ -1,10 +1,11 @@
 import type { NextPage } from "next"
 import { useRouter } from "next/router"
-import { SyntheticEvent, useState } from "react"
+import { SyntheticEvent, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
 import { loginWithEmailAndPassword } from "../services/login"
 import { onInputChange } from "../services/onInputChange"
+import { ROszTI } from "../services/ROszTI"
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -13,6 +14,18 @@ const Home: NextPage = () => {
   const [userCode, setUserCode] = useState("")
   const [fetching, setFetching] = useState(false)
   const [error, setError] = useState("")
+
+  useEffect(() => {
+    const runOnStart = async () => {
+      console.log(
+        await ROszTI.getToken({
+          email: "barnabas.varga@estiem.org",
+          password: "Kasu12345",
+        })
+      )
+    }
+    runOnStart()
+  }, [])
 
   const onFormSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
