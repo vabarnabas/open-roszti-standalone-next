@@ -4,7 +4,6 @@ import { SyntheticEvent, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
 import { loginWithEmailAndPassword } from "../services/login"
-import { onInputChange } from "../services/onInputChange"
 import { ROszTI } from "../services/ROszTI"
 
 const Home: NextPage = () => {
@@ -16,14 +15,7 @@ const Home: NextPage = () => {
   const [error, setError] = useState("")
 
   useEffect(() => {
-    const runOnStart = async () => {
-      console.log(
-        await ROszTI.getToken({
-          email: "barnabas.varga@estiem.org",
-          password: "Kasu12345",
-        })
-      )
-    }
+    const runOnStart = async () => {}
     runOnStart()
   }, [])
 
@@ -32,12 +24,14 @@ const Home: NextPage = () => {
     setFetching(true)
     try {
       if (email.length > 0 && password.length > 0) {
-        const user = await loginWithEmailAndPassword(email, password)
-        if (user?.data) {
+        const token = await ROszTI.getToken({ email, password })
+        const user = await ROszTI.getCurrentUser({ token })
+
+        if (user) {
           router.push({
             pathname: "/user",
             query: {
-              c: user.data.code,
+              c: user.code,
             },
           })
         }
