@@ -3,22 +3,22 @@ export interface TokenRequestOptions {
   password: string
 }
 
-export const getToken = async (options: TokenRequestOptions) => {
+export const getToken = async (
+  options: TokenRequestOptions,
+  baseUrl: string
+) => {
   try {
-    const tokenRequest = await fetch(
-      `${process.env.NEXT_PUBLIC_API_URL}/login`,
-      {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: options.email,
-          password: options.password,
-        }),
-      }
-    )
+    const tokenRequest = await fetch(`${baseUrl}/login`, {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        email: options.email,
+        password: options.password,
+      }),
+    })
     const data = await tokenRequest.json()
     return data.data.token
   } catch (err) {

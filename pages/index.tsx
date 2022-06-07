@@ -4,7 +4,7 @@ import { SyntheticEvent, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
 import { loginWithEmailAndPassword } from "../services/login"
-import { ROszTI } from "../services/ROszTI"
+import { ROszTIClient } from "../services/ROszTI"
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -13,6 +13,7 @@ const Home: NextPage = () => {
   const [userCode, setUserCode] = useState("")
   const [fetching, setFetching] = useState(false)
   const [error, setError] = useState("")
+  const ROszTI = new ROszTIClient(process.env.NEXT_PUBLIC_API_URL || "")
 
   useEffect(() => {
     const runOnStart = async () => {}

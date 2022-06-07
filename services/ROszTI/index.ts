@@ -7,8 +7,18 @@ import {
   TokenRequestOptions,
 } from "./functions/authentication/getToken"
 
-export const ROszTI = {
-  getToken: (options: TokenRequestOptions) => getToken(options),
-  getCurrentUser: (options: CurrentUserRequestOptions) =>
-    getCurrentUser(options),
+export class ROszTIClient {
+  baseUrl: string
+
+  constructor(url: string) {
+    this.baseUrl = url
+  }
+
+  getToken(options: TokenRequestOptions) {
+    return getToken(options, this.baseUrl)
+  }
+
+  getCurrentUser(options: CurrentUserRequestOptions) {
+    return getCurrentUser(options, this.baseUrl)
+  }
 }
