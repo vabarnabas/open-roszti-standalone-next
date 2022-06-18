@@ -3,7 +3,6 @@ import { useRouter } from "next/router"
 import { SyntheticEvent, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
-import { loginWithEmailAndPassword } from "../services/login"
 import { ROszTIClient } from "../services/ROszTI"
 
 const Home: NextPage = () => {
