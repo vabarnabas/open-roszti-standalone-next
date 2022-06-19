@@ -17,18 +17,7 @@ const Layout: React.FC<Props> = ({ children }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* <div className="inline w-full items-center justify-center bg-soft-green py-2 text-center text-sm text-white">
-        You can now add your openRÖszTI as a bookmark.
-        <button
-          onClick={() => {
-            browser.bookmarks.create({
-              title: "bookmarks.create() on MDN",
-              url: "https://developer.mozilla.org/Add-ons/WebExtensions/API/bookmarks/create",
-            })
-          }}
-          className="ml-3 rounded-md border border-white px-2 py-0.5 text-xs hover:border-slate-200 hover:text-slate-200"
-        >
-          Add
-        </button>
+        🔐 Don't forget to enroll with the new RÖszTI ID program.
       </div> */}
       <div className="flex h-full w-full flex-1">{children}</div>
       <div className="mt-4 inline w-full items-center justify-center py-2 text-center text-sm">

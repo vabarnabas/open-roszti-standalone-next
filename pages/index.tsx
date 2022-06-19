@@ -21,9 +21,9 @@ const Home: NextPage = () => {
 
   const onFormSubmit = async (e: SyntheticEvent) => {
     e.preventDefault()
-    setFetching(true)
     try {
       if (email.length > 0 && password.length > 0) {
+        setFetching(true)
         const token = await ROszTI.getToken({ email, password })
         const user = await ROszTI.getCurrentUser({ token })
 
@@ -35,7 +35,8 @@ const Home: NextPage = () => {
             },
           })
         }
-      } else if (userCode.length === 6) {
+      } else if (userCode.length === 5 || userCode.length === 6) {
+        setFetching(true)
         router.push({
           pathname: "/user",
           query: {
