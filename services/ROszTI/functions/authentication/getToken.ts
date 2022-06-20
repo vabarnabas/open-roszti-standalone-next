@@ -3,7 +3,7 @@ export interface TokenRequestOptions {
   password: string
 }
 
-export const getToken = async (
+export const ROszTIFunctionGetToken = async (
   options: TokenRequestOptions,
   baseUrl: string
 ) => {

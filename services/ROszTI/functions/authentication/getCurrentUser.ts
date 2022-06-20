@@ -2,7 +2,7 @@ export interface CurrentUserRequestOptions {
   token: string
 }
 
-export const getCurrentUser = async (
+export const ROszTIFunctionGetCurrentUser = async (
   options: CurrentUserRequestOptions,
   baseUrl: string
 ) => {

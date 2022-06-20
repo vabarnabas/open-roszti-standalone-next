@@ -1,9 +1,9 @@
 import {
   CurrentUserRequestOptions,
-  getCurrentUser,
+  ROszTIFunctionGetCurrentUser,
 } from "./functions/authentication/getCurrentUser"
 import {
-  getToken,
+  ROszTIFunctionGetToken,
   TokenRequestOptions,
 } from "./functions/authentication/getToken"
 
@@ -15,10 +15,21 @@ export class ROszTIClient {
   }
 
   getToken(options: TokenRequestOptions) {
-    return getToken(options, this.baseUrl)
+    return ROszTIFunctionGetToken(options, this.baseUrl)
   }
 
   getCurrentUser(options: CurrentUserRequestOptions) {
-    return getCurrentUser(options, this.baseUrl)
+    return ROszTIFunctionGetCurrentUser(options, this.baseUrl)
   }
+}
+
+export const useROszTIClient = (baseUrl: string) => {
+  const getToken = (options: TokenRequestOptions) => {
+    return ROszTIFunctionGetToken(options, baseUrl)
+  }
+  const getCurrentUser = (options: CurrentUserRequestOptions) => {
+    return ROszTIFunctionGetCurrentUser(options, baseUrl)
+  }
+
+  return { getToken, getCurrentUser }
 }
