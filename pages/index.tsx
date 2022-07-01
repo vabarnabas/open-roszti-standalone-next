@@ -23,7 +23,7 @@ const Home: NextPage = () => {
           await ROszTI.getToken({ email, password })
         ).access_token
         const user = await ROszTI.getCurrentUser({ token })
-        if (user?.message) throw new Error("Invalid credentials")
+        if (!user.id) throw new Error("Invalid credentials")
         if (user) {
           router.push({
             pathname: "/user",
