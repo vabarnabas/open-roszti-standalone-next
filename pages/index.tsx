@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { SyntheticEvent, useEffect, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
-import { useROszTIClient } from "../services/ROszTI"
+import { useROszTIClient } from "roszti-client"
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -20,7 +20,7 @@ const Home: NextPage = () => {
       if (email.length > 0 && password.length > 0) {
         setFetching(true)
         const token = await ROszTI.getToken({ email, password })
-        const user = await ROszTI.getCurrentUser({ token })
+        const user = await ROszTI.getCurrentUser({ token: token.access_token })
 
         if (user) {
           router.push({
