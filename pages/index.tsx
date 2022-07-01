@@ -19,8 +19,10 @@ const Home: NextPage = () => {
     try {
       if (email.length > 0 && password.length > 0) {
         setFetching(true)
-        const token = await ROszTI.getToken({ email, password })
-        const user = await ROszTI.getCurrentUser({ token: token.access_token })
+        const token = await (
+          await ROszTI.getToken({ email, password })
+        ).access_token
+        const user = await ROszTI.getCurrentUser({ token })
         if (user?.message) throw new Error("Invalid credentials")
         if (user) {
           router.push({
