@@ -21,7 +21,7 @@ const Home: NextPage = () => {
         setFetching(true)
         const token = await ROszTI.getToken({ email, password })
         const user = await ROszTI.getCurrentUser({ token: token.access_token })
-
+        if (user?.message) throw new Error("Invalid credentials")
         if (user) {
           router.push({
             pathname: "/user",
