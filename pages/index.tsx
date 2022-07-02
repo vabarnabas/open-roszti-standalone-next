@@ -1,6 +1,6 @@
 import type { NextPage } from "next"
 import { useRouter } from "next/router"
-import { SyntheticEvent, useEffect, useState } from "react"
+import { SyntheticEvent, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
 import { useROszTIClient } from "roszti-client"
