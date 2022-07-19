@@ -1706,10 +1706,10 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-roszti-client@^1.0.15:
-  version "1.0.15"
-  resolved "https://registry.yarnpkg.com/roszti-client/-/roszti-client-1.0.15.tgz#43e8f3305177afaf178e45dcf139499e129b30e2"
-  integrity sha512-QF6s6Lz3LcoEo2yS9iBBhn6o4uvYodWBCIUNN8jqZC6GkD44THQBFlOLJD5KwMJHa5ZsM41FZk7MObEv+ktu2A==
+roszti-client@^1.0.16:
+  version "1.0.16"
+  resolved "https://registry.yarnpkg.com/roszti-client/-/roszti-client-1.0.16.tgz#c47db6ce8d69d14af1d8ebd4164c924fb6c30844"
+  integrity sha512-rz8aDITDUM3NJFrmWzayyor3sJ/JJAfQOPTbjnRtNrxbw8t8Wo/cPxz4y0RgLyGgPeJKt6TM6ot0nUoYJzUWGw==
 
 run-parallel@^1.1.9:
   version "1.2.0"

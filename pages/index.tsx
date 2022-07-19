@@ -58,7 +58,7 @@ const Home: NextPage = () => {
             action=""
             className="flex flex-col items-center space-y-3 text-sm"
           >
-            <p className="mb-4 text-3xl font-semibold">
+            <p className="mb-6 text-4xl font-semibold">
               openRÖszTI<span className="text-sm text-soft-green">v7</span>
             </p>
             <div className="relative flex w-full flex-col space-y-3 rounded-md border p-2">
