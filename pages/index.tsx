@@ -57,7 +57,7 @@ const Home: NextPage = () => {
                   query: { o: "https://open.roszti.barnabee.studio/" },
                 })
               }}
-              className="flex w-full cursor-pointer items-center justify-center rounded-md bg-soft-green py-1 px-3 text-white outline-none hover:bg-soft-green-dark"
+              className="flex w-full cursor-pointer items-center justify-center rounded-md border border-soft-green bg-transparent py-1 px-3 text-soft-green outline-none hover:border-soft-green-dark hover:bg-gray-50"
             >
               <BsFillShieldLockFill className="mr-2 text-xs" />
               Login with RÖszTI ID
