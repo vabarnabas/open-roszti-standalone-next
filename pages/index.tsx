@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { SyntheticEvent, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
+import { FaFolderOpen } from "react-icons/fa"
 import { BsFillShieldLockFill } from "react-icons/bs"
 
 const Home: NextPage = () => {
@@ -40,9 +41,15 @@ const Home: NextPage = () => {
             action=""
             className="flex flex-col items-center space-y-3 text-sm"
           >
-            <p className="mb-4 text-4xl font-semibold">
-              openRÖszTI<span className="text-sm text-soft-green">v7</span>
-            </p>
+            <div className="mb-2 flex flex-col text-4xl font-semibold">
+              <p className="flex items-center">
+                <FaFolderOpen className="mr-1 text-3xl text-soft-green " />
+                RÖszTI
+              </p>
+              <span className="ml-auto -mt-2 text-sm font-normal text-soft-green">
+                open
+              </span>
+            </div>
             <div
               onClick={() => {
                 router.push({
@@ -55,7 +62,7 @@ const Home: NextPage = () => {
               <BsFillShieldLockFill className="mr-2 text-xs" />
               Login with RÖszTI ID
             </div>
-            <div className="relative flex h-px w-full items-center justify-center bg-slate-200 px-32">
+            <div className="relative flex h-px w-full w-full items-center justify-center bg-slate-200">
               <p className="absolute bg-white px-3 text-sm">or</p>
             </div>
             <input
