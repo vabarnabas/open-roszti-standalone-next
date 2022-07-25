@@ -4,6 +4,7 @@ import { SyntheticEvent, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
 import { useROszTIClient } from "roszti-client"
+import { MdAssignmentInd, MdFolderShared, MdIosShare } from "react-icons/md"
 
 const Home: NextPage = () => {
   const router = useRouter()
@@ -58,37 +59,21 @@ const Home: NextPage = () => {
             action=""
             className="flex flex-col items-center space-y-3 text-sm"
           >
-            <p className="mb-6 text-4xl font-semibold">
+            <p className="mb-4 text-4xl font-semibold">
               openRÖszTI<span className="text-sm text-soft-green">v7</span>
             </p>
-            <div className="relative flex w-full flex-col space-y-3 rounded-md border p-2">
-              <p className="absolute left-2 -top-2 bg-white px-2 text-xs">
-                Experimental
-              </p>
-              <input
-                value={email}
-                onChange={(e) => {
-                  setEmail(e.target.value)
-                }}
-                type="email"
-                className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
-                placeholder="rID E-mail"
-              />
-              <div className="">
-                <input
-                  value={password}
-                  onChange={(e) => {
-                    setPassword(e.target.value)
-                  }}
-                  type="password"
-                  className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
-                  placeholder="rID Password"
-                />
-                {error && (
-                  <p className="mt-1 pl-1 text-xs text-rose-500">{error}</p>
-                )}
-              </div>
-            </div>
+            <button
+              onClick={() =>
+                router.push({
+                  pathname: "https://connect.roszti.barnabee.studio/",
+                  query: { o: "https://open.roszti.barnabee.studio/" },
+                })
+              }
+              className="flex w-full items-center justify-center rounded-md bg-soft-green py-1 px-3 text-white outline-none"
+            >
+              <MdAssignmentInd className="mr-1" />
+              Login with RÖszTI ID
+            </button>
             <div className="relative flex h-px w-full items-center justify-center bg-slate-200 px-32">
               <p className="absolute bg-white px-3 text-sm">or</p>
             </div>
