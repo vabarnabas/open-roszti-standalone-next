@@ -33,7 +33,7 @@ const UserView = () => {
         {ROszTIData.length === 0 ? (
           <Spinner />
         ) : (
-          <div className="flex h-full w-full flex-col items-start justify-start py-6 px-8">
+          <div className="flex h-full w-full flex-col items-start justify-start overflow-y-auto py-6 px-8">
             {ROszTIData && (
               <div className="mb-3 grid w-full gap-x-4 gap-y-2 lg:grid-cols-2">
                 <div className="grid w-full grid-flow-col items-center justify-between gap-x-6 rounded-md bg-slate-50 py-1 px-4 dark:bg-gray-700">
