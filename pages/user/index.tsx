@@ -36,7 +36,7 @@ const UserView = () => {
           <div className="flex h-full w-full flex-col items-start justify-start py-6 px-8">
             {ROszTIData && (
               <div className="mb-3 grid w-full gap-x-4 gap-y-2 lg:grid-cols-2">
-                <div className="grid w-full grid-flow-col items-center justify-between gap-x-6 rounded-md bg-slate-50 py-1 px-4">
+                <div className="grid w-full grid-flow-col items-center justify-between gap-x-6 rounded-md bg-slate-50 py-1 px-4 dark:bg-gray-700">
                   <div className="flex flex-col items-center justify-center">
                     <p className="font-bold">
                       {ROszTIData[ROszTIData.length - 2]?.point}
@@ -62,7 +62,7 @@ const UserView = () => {
                     </p>
                   )}
                 </div>
-                <div className="grid w-full grid-flow-col items-center justify-between gap-x-6 rounded-md bg-slate-50 py-1 px-4">
+                <div className="grid w-full grid-flow-col items-center justify-between gap-x-6 rounded-md bg-slate-50 py-1 px-4 dark:bg-gray-700">
                   <div className="flex flex-col items-center justify-center">
                     <p className="font-bold">
                       {ROszTIData[ROszTIData.length - 1]?.point}
@@ -97,7 +97,7 @@ const UserView = () => {
                     (item: ROszTIDataType) => (
                       <div
                         key={item.event + item.point}
-                        className="flex items-center justify-between rounded-md bg-slate-50 py-2 px-4"
+                        className="flex items-center justify-between rounded-md bg-slate-50 py-2 px-4 dark:bg-gray-700"
                       >
                         <p className="">{item.event}</p>
                         <p className="font-semibold">{item.point}</p>

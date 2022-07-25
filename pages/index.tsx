@@ -57,13 +57,15 @@ const Home: NextPage = () => {
                   query: { o: "https://open.roszti.barnabee.studio/" },
                 })
               }}
-              className="flex w-full cursor-pointer items-center justify-center rounded-md border border-soft-green bg-transparent py-1 px-3 text-soft-green outline-none hover:border-soft-green-dark hover:bg-gray-50"
+              className="flex w-full cursor-pointer items-center justify-center rounded-md border border-soft-green bg-transparent py-1 px-3 text-soft-green outline-none hover:border-soft-green-dark hover:bg-gray-50 dark:hover:bg-gray-700"
             >
               <BsFillShieldLockFill className="mr-2 text-xs" />
               Login with RÖszTI ID
             </div>
             <div className="relative flex h-px w-full items-center justify-center bg-slate-200">
-              <p className="absolute bg-white px-3 text-sm">or</p>
+              <p className="absolute bg-white px-3 text-sm dark:bg-gray-800">
+                or
+              </p>
             </div>
             <input
               value={userCode}
@@ -71,7 +73,7 @@ const Home: NextPage = () => {
                 setUserCode(e.target.value)
               }}
               type="text"
-              className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none"
+              className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none dark:bg-gray-700"
               placeholder="RÖszTI Code"
             />
             <button className="w-full rounded-md bg-soft-green py-1 px-3 text-white outline-none hover:bg-soft-green-dark">
