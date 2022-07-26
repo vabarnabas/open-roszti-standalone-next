@@ -3,7 +3,7 @@ import { useRouter } from "next/router"
 import { SyntheticEvent, useState } from "react"
 import Layout from "../components/layout"
 import Spinner from "../components/spinner/spinner"
-import { FaFolderOpen } from "react-icons/fa"
+import { FaFolderOpen, FaUserLock } from "react-icons/fa"
 import { BsFillShieldLockFill } from "react-icons/bs"
 
 const Home: NextPage = () => {
@@ -67,15 +67,18 @@ const Home: NextPage = () => {
                 or
               </p>
             </div>
-            <input
-              value={userCode}
-              onChange={(e) => {
-                setUserCode(e.target.value)
-              }}
-              type="text"
-              className="w-full rounded-md bg-gray-100 py-1 px-3 outline-none dark:bg-gray-700"
-              placeholder="RÖszTI Code"
-            />
+            <div className="relative flex items-center">
+              <FaUserLock className="absolute left-3" />
+              <input
+                value={userCode}
+                onChange={(e) => {
+                  setUserCode(e.target.value)
+                }}
+                type="text"
+                className="w-full rounded-md bg-gray-100 py-1 pl-9 pr-3 outline-none dark:bg-gray-700"
+                placeholder="RÖszTI Code"
+              />
+            </div>
             <button className="w-full rounded-md bg-soft-green py-1 px-3 text-white outline-none hover:bg-soft-green-dark">
               Continue
             </button>
