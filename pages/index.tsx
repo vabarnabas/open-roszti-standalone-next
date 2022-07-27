@@ -72,7 +72,7 @@ const Home: NextPage = () => {
               <input
                 value={userCode}
                 onChange={(e) => {
-                  setUserCode(e.target.value)
+                  setUserCode(e.target.value.slice(0, 6))
                 }}
                 type="text"
                 className="w-full rounded-md bg-gray-100 py-1 pl-9 pr-3 outline-none dark:bg-gray-700"
