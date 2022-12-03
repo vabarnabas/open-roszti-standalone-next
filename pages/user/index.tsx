@@ -3,11 +3,13 @@ import React, { useEffect, useState } from "react"
 import Layout from "../../components/layout"
 import Spinner from "../../components/spinner/spinner"
 import { getData } from "../../services/getData"
+import TokenService from "../../services/token.service"
 import { ROszTIDataType } from "../../types/data.types"
 
 const UserView = () => {
   const router = useRouter()
   const [ROszTIData, setROszTIData] = useState<ROszTIDataType[]>([])
+  const tokenservice = new TokenService()
 
   const { c: userCode } = router.query
 
@@ -19,6 +21,7 @@ const UserView = () => {
             await getData(Array.isArray(userCode) ? userCode[0] : userCode)
           )
         } catch {
+          await tokenservice.deleteToken()
           router.push("/")
         }
       }

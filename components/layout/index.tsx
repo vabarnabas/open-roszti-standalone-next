@@ -7,7 +7,7 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="flex h-screen w-screen select-none flex-col text-slate-500 dark:bg-gray-800 dark:text-white">
+    <div className="flex h-screen w-screen select-none flex-col text-[#4b4c56] dark:bg-[#22232f] dark:text-[#fbfbfd]">
       <Head>
         <title>openRÖszTI</title>
         <meta
@@ -16,9 +16,9 @@ const Layout: React.FC<Props> = ({ children }) => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {/* <div className="inline w-full items-center justify-center bg-soft-green py-2 text-center text-sm text-white">
-        🔐 Don't forget to enroll with the new RÖszTI ID program.
-      </div> */}
+      <div className="inline w-full items-center justify-center bg-soft-green py-2 text-center text-sm text-white">
+        👋🏼 Welcome to the new openRÖszTI with RÖszTI ID.
+      </div>
       <div className="flex h-full w-full flex-1">{children}</div>
       <div className="mt-4 inline w-full items-center justify-center py-2 text-center text-sm">
         In case of any problem write an email to

@@ -8,6 +8,7 @@ module.exports = {
       colors: {
         "soft-green": "#00b581",
         "soft-green-dark": "#00A274",
+        "soft-gray": "#f6f7fd",
       },
     },
   },
