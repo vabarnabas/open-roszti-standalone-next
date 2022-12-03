@@ -77,7 +77,7 @@ const Home: NextPage = () => {
               onClick={() => {
                 router.push({
                   pathname: "https://gateway.roszti.barnabee.studio/",
-                  query: { o: "https://open.roszti.barnabee.studio/" },
+                  query: { o: "https://open.roszti.barnabee.studio" },
                 })
               }}
               className="mt-4 flex w-full cursor-pointer items-center justify-center rounded-md border border-soft-green bg-transparent py-1 px-3 text-soft-green outline-none hover:border-soft-green-dark hover:bg-gray-50 dark:hover:bg-gray-700"
